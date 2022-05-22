@@ -1,18 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 
-const ItemCount = ({stock, initial, onAdd}) => {
+const ItemCount = ({stock}) => {
+
+    const [count, setCount] = useState(1);
+
+    const addCount = () => {
+        if(count < stock) {
+            setCount(count + 1)
+        }
+    }
+
+    const removeCount = () => {
+        if(count > 1) {
+            setCount(count - 1)
+        }
+    }
+
   return (
     <>
       <div className="container m-2">
         <div className="row align-items">
           <div className="col">
-            <button className="btn btn-primary">-</button>
+            <button className="btn btn-primary" onClick={removeCount}>-</button>
           </div>
           <div className="col">
-            <p>{initial}</p>
+            <p>{count}</p>
           </div>
           <div className="col">
-            <button className="btn btn-primary">+</button>
+            <button className="btn btn-primary" onClick={addCount}>+</button>
           </div>
         </div>
       </div>
