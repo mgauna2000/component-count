@@ -1,6 +1,7 @@
 
 import './App.css';
 import { CardList } from './components/CardList/CardList';
+// import ItemCount from './components/ItemCount/ItemCount';
 import { Navbar } from './components/Navbar/Navbar';
 
 function App() {
